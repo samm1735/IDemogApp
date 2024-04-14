@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:model="clr-namespace:IDemogApp.Models"
+xmlns:vm="clr-namespace:IDemogApp.ViewModels"
+x:DataType="vm:MainPageViewModel"
+x:Class="IDemogApp.Views.MainPage"
+             Title=""
+             >
+    <Grid RowDefinitions="*, auto" RowSpacing="5" Margin="5">
+            <CollectionView x:Name="Personnes"
+                ItemsSource="{Binding ModelViewPersonnes}"
+                
+                EmptyView="La liste est vide !" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Personne">
+                        <Border StrokeShape="RoundRectangle 10" Margin="5" Padding="10" HeightRequest="100">
+
+
+                            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                            <Image Source="{Binding Photo}"  WidthRequest="70" HeightRequest="70">
+                                    <!--<Image.Triggers>
+                                        <DataTrigger
+                                            TargetType="Image"
+                                            Binding="{Binding Photo}"
+                                            Value="{x:Null}"
+                                            >
+
+                                            <Setter
+                                                Property="Source"
+                                                Value="placeholder_person.png"
+                                                />
+
+                                        </DataTrigger>
+                                    </Image.Triggers>-->
+                                </Image>
+
+                                <VerticalStackLayout HorizontalOptions="Center" Spacing="10" Margin="20,0,0,0">
+
+                                    <HorizontalStackLayout Spacing="10">
+                                        
+                                        <!--TO-DO : Remove the following line it was purely for testing purposes-->
+                                        <!--<Label Text="{Binding Id}" FontSize="Medium" ></Label>-->
+                                        
+                                        <Label Text="{Binding Prenom}" FontSize="Medium" ></Label>
+                                        <Label Text="{Binding Nom}" FontSize="Medium" ></Label>
+                                    </HorizontalStackLayout>
+
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding Email}" FontSize="Small" ></Label>
+
+                                    </HorizontalStackLayout>
+
+
+                                </VerticalStackLayout>
+
+
+
+                            </HorizontalStackLayout>
+                            
+                            
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:MainPageViewModel}}, 
+                                Path=EditPersonneCommand}"
+                                CommandParameter="{Binding .}"
+                                />
+                        </Border.GestureRecognizers>
+
+
+                    </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        
+            <Button  Grid.Row="1" Margin="10"
+                     x:Name="AjoutPersonne"
+                     Text="Ajout Personne"
+                     BorderWidth="5"
+                     BorderColor="DarkOrchid"
+                     ImageSource="house_door_fill.png"
+                     HorizontalOptions="Fill"
+                     Command="{Binding EntreNouvellePersonneCommand}"
+                    />
+    </Grid>
+</ContentPage>
