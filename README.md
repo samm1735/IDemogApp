@@ -5,10 +5,14 @@
 ## Nom et prénom
 - ISAAC Sammuel Ramclief
 
-### App Preview
-<!---
-<img src="https://github.com/samm1735/IWeatherApp/blob/main/Screenshot_2024-03-24-17-12-20-877_com.companyname.iweatherapp~2.jpg" alt="App preview" width="200" height="350">
---->
+## App Preview
+
+### Ajout de personne
+<img src="https://github.com/samm1735/IDemogApp/blob/main/Media_240414_165343.gif" alt="App preview" width="200" height="350">
+
+### Modification de personne
+<img src="https://github.com/samm1735/IDemogApp/blob/main/Media_240414_165859.gif" alt="App preview" width="200" height="350">
+
 
 ## Description
 Application mobile developpée avec .Net MAUI pour faire de la gestion démographique.
@@ -43,7 +47,7 @@ Par conséquent notre folder structure est la suivante.
 ///
 ```                         
 
-## Packages utilisés
+## Nuget Packages utilisés
 - CommunityToolkit.mvvm
 - CommunityToolkit.maui
 - sqlite-net-pcl
