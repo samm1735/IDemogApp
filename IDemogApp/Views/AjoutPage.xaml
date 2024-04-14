@@ -70,6 +70,8 @@
 
         <Entry x:Name="entryNom" Placeholder="Nom" Text="{Binding UnePersonne.Nom}"/>
         <Entry x:Name="entryPrenom" Placeholder="Prenom" Text="{Binding UnePersonne.Prenom}"/>
+        <Entry x:Name="entryDdn" Placeholder="Date de naissance" Text="{Binding UnePersonne.Ddn}"/>
+        <DatePicker x:Name="entryDdn2" Date="{Binding UnePersonne.Ddn}" />
 
         <Entry x:Name="entryEmail" Placeholder="Email" Text="{Binding UnePersonne.Email}">
             <Entry.Behaviors>
